@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>LiveAction</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!-- Background gradient (animated) -->
+    <div class="bg-gradient"></div>
+    
+    <!-- Main container -->
+    <div class="main-container">
+        <!-- Sidebar navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">🎬</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-section="all">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-label">Tümü</span>
+                </button>
+                <button class="nav-item" data-section="videos">
+                    <span class="nav-icon">🎬</span>
+                    <span class="nav-label">Videolar</span>
+                </button>
+                <button class="nav-item" data-section="audios">
+                    <span class="nav-icon">🎵</span>
+                    <span class="nav-label">Müzik</span>
+                </button>
+                <button class="nav-item" data-section="images">
+                    <span class="nav-icon">🖼️</span>
+                    <span class="nav-label">Resimler</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Content area -->
+        <main class="content">
+            <!-- Featured/Hero section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 id="hero-title">Hoş Geldiniz</h2>
+                    <p id="hero-subtitle">En iyi deneyimi yaşayın</p>
+                </div>
+            </section>
+
+            <!-- Sections with carousels -->
+            <section class="sections-container">
+                <!-- Videos section -->
+                <section class="media-section" data-type="videos">
+                    <div class="section-header">
+                        <h2>Videolar</h2>
+                        <p class="section-count" id="videos-count">0 item</p>
+                    </div>
+                    <div class="carousel" id="videos-carousel">
+                        <div class="carousel-track" id="videos-track">
+                            <!-- Items will be inserted here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Audios section -->
+                <section class="media-section" data-type="audios">
+                    <div class="section-header">
+                        <h2>Müzik</h2>
+                        <p class="section-count" id="audios-count">0 item</p>
+                    </div>
+                    <div class="carousel" id="audios-carousel">
+                        <div class="carousel-track" id="audios-track">
+                            <!-- Items will be inserted here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Images section -->
+                <section class="media-section" data-type="images">
+                    <div class="section-header">
+                        <h2>Resimler</h2>
+                        <p class="section-count" id="images-count">0 item</p>
+                    </div>
+                    <div class="carousel" id="images-carousel">
+                        <div class="carousel-track" id="images-track">
+                            <!-- Items will be inserted here -->
+                        </div>
+                    </div>
+                </section>
+            </sections-container>
+        </main>
+    </div>
+
+    <!-- Player modal (fullscreen) -->
+    <div id="player-modal" class="player-modal hidden">
+        <div class="player-wrapper">
+            <!-- Close button -->
+            <button class="player-close" onclick="closePlayer()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Video player -->
+            <video id="video-player" class="media-player" controls>
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Audio player -->
+            <audio id="audio-player" class="media-player" controls>
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- Player info -->
+            <div class="player-info">
+                <h3 id="player-title">Başlık</h3>
+                <p id="player-subtitle" class="player-meta"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="loading-indicator hidden">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="style/app.js"></script>
+</body>
+</html>
