@@ -1,0 +1,10 @@
+# Media files
+media/
+src/backend/media/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
